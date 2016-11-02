@@ -1,3 +1,3 @@
-function y = bspFun(t)
+function y = bspFun(x)
 
-y = -t .* -t;
+y = -x .* x;

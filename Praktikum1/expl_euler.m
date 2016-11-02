@@ -9,7 +9,7 @@ h = diff(t);
 tmp = zeros(1,length(t)-1);
 
 for n = 1:length(t)-1
-    tmp = inputFun(n);
+    tmp = feval(inputFun,y(n));
     y(n+1) = y(n) + h(n) * tmp;
 end
   
