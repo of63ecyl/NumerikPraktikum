@@ -1,24 +1,31 @@
 % exercise2 script
+
+% schrittweiten
 h1 = 0.2;
 h2 = 0.1;
 h3 = 0.05;
 
+% zeitvektoren
 lim = 1;
-
 t = linspace(0,1);
 t1 = 0:h1:lim;
 t2 = 0:h2:lim;
 t3 = 0:h3:lim;
 
+% anfangswert
 y0 = 1;
 
-inputFun = @(t,c) 1./(t + c);
+inputFun1 = bspFun(t1);
+inputFun2 = bspFun(t2);
+inputFun3 = bspFun(t3);
 
+% berechnung der ergebnisse
 y =  1./(t + 1);
-y1 = expl_euler(inputFun, t1, y0);
-y2 = expl_euler(inputFun, t2, y0);
-y3 = expl_euler(inputFun, t3, y0);
+y1 = expl_euler(inputFun1, t1, y0);
+y2 = expl_euler(inputFun2, t2, y0);
+y3 = expl_euler(inputFun3, t3, y0);
 
+% plots
 figure(1)
 plot(t1,y1,'*-')
 hold on
