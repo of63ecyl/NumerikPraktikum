@@ -1,3 +1,3 @@
 function y = f1(x)
 
-y = x^2 - 4;
+y = x.^2 - 4;
