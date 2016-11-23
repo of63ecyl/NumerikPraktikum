@@ -1,4 +1,4 @@
-function [ xn,found,iter] = stdnewton( x0, f, fdx, maxIter, tol )
+function [ xn,found,iter] = stdnewton( x0, f_handle, fdx_handle, maxIter, tol )
 % STDNEWTON Implementation of the standard newton method
 % to solve f(x) = 0
 
@@ -16,8 +16,8 @@ function [ xn,found,iter] = stdnewton( x0, f, fdx, maxIter, tol )
 xCur = x0;
 
 for i = 1:maxIter
-    f_xCur = feval(f,xCur);
-    fPrime_xCur = feval(fdx,xCur);
+    f_xCur = feval(f_handle,xCur);
+    fPrime_xCur = feval(fdx_handle,xCur);
     
     xNew = xCur - (f_xCur / fPrime_xCur);
     
