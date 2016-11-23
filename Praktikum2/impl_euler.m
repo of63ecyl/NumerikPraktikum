@@ -1,4 +1,4 @@
-function [ y ] = impl_euler( RHSfun,DerRHSfun, t, y0 ,maxIter,tol)
+function [ y ] = impl_euler(RHSfun,DerRHSfun, t, y0 ,maxIter,tol)
 % Implementation of the implicit euler method using newton iteration
 % Input: RHSfun function handle for the right hand side function (fun)
 %        DerRHSfun derivation of the right hand side function (fun’)
@@ -21,7 +21,7 @@ for n = 1:length(t)-1
 end
 
 if found == 1
-    disp('fsolve converged to a root.');
+    disp('converged to a root.');
 end
 
 if iter == maxIter

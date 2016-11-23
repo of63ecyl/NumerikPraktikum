@@ -18,7 +18,7 @@ y(1) = y0;
 h = diff(t);
 for n = 1:length(t)-1
     f_handle = @(x) y(n) - x + h(n)*feval(RHSfun,x);
-    [y(n+1),~,exitflag] = fsolve(f_handle,optimoptions('fsolve','iter',maxIter,'OptimalityTolerance',tol));
+    [y(n+1),~,exitflag] = fsolve(f_handle,y(n));%,optimoptions('fsolve','iter',maxIter,'OptimalityTolerance',tol));
 end
 
 if exitflag == 1
